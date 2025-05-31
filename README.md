@@ -38,7 +38,7 @@ JAVI:
 -crear alquiler(ALTA) - jefe
 -eliminar alquiler(BAJA) -jefe
 -mod alquiler -jefe
--> ya pensare que coño hacer con las vistas de notificaciones
+-> ya pensare que hacer con las vistas de notificaciones
 - MENU ALQUILER JEFE-> botones a las tres vistas de alquiler
 - MENU ALQUILER CLIENTE -> botones a buscar alquileres y registro alquileres
 -MENU JEFE -> botones al menú alquiler y menú vehiculos, tienes q estar loggeado
