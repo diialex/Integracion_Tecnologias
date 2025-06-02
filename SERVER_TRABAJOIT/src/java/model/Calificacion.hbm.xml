@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2025 18:12:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Calificacion" table="calificacion" catalog="recar" optimistic-lock="version">
+        <composite-id name="id" class="model.CalificacionId">
+            <key-property name="idVehiculo" type="string">
+                <column name="idVehiculo" length="20" />
+            </key-property>
+            <key-property name="dniCliente" type="string">
+                <column name="dniCliente" length="20" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="cliente" class="model.Cliente" update="false" insert="false" fetch="select">
+            <column name="dniCliente" length="20" not-null="true" />
+        </many-to-one>
+        <many-to-one name="vehiculo" class="model.Vehiculo" update="false" insert="false" fetch="select">
+            <column name="idVehiculo" length="20" not-null="true" />
+        </many-to-one>
+        <property name="estrellas" type="java.lang.Integer">
+            <column name="estrellas" />
+        </property>
+        <property name="valoracion" type="string">
+            <column name="valoracion" />
+        </property>
+    </class>
+</hibernate-mapping>

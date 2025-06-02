@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2025 18:12:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Vehiculo" table="vehiculo" catalog="recar" optimistic-lock="version">
+        <id name="idVehiculo" type="string">
+            <column name="idVehiculo" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="modelo" type="string">
+            <column name="modelo" length="50" />
+        </property>
+        <property name="marca" type="string">
+            <column name="marca" length="50" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="50" />
+        </property>
+        <property name="numPlaca" type="string">
+            <column name="numPlaca" length="20" />
+        </property>
+        <property name="estadoDisponibilidad" type="string">
+            <column name="estadoDisponibilidad" length="20" />
+        </property>
+        <set name="calificacions" table="calificacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idVehiculo" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.Calificacion" />
+        </set>
+        <set name="alquilers" table="alquiler" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idVehiculo" length="20" />
+            </key>
+            <one-to-many class="model.Alquiler" />
+        </set>
+    </class>
+</hibernate-mapping>

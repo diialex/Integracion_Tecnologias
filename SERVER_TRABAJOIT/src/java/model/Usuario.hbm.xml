@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2025 18:12:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Usuario" table="usuario" catalog="recar" optimistic-lock="version">
+        <id name="nick" type="string">
+            <column name="nick" length="50" />
+            <generator class="assigned" />
+        </id>
+        <property name="contrasena" type="string">
+            <column name="contrasena" length="100" />
+        </property>
+        <property name="correo" type="string">
+            <column name="correo" length="100" />
+        </property>
+        <property name="telefono" type="java.lang.Integer">
+            <column name="telefono" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="nombre" length="100" />
+        </property>
+        <property name="apellido1" type="string">
+            <column name="apellido1" length="100" />
+        </property>
+        <property name="apellido2" type="string">
+            <column name="apellido2" length="100" />
+        </property>
+        <set name="clientes" table="cliente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nick" length="50" />
+            </key>
+            <one-to-many class="model.Cliente" />
+        </set>
+        <set name="jefes" table="jefe" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="nick" length="50" />
+            </key>
+            <one-to-many class="model.Jefe" />
+        </set>
+    </class>
+</hibernate-mapping>

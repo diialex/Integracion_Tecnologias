@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2025 18:12:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Cliente" table="cliente" catalog="recar" optimistic-lock="version">
+        <id name="dniCliente" type="string">
+            <column name="dniCliente" length="20" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="usuario" class="model.Usuario" fetch="select">
+            <column name="nick" length="50" />
+        </many-to-one>
+        <set name="metodopagos" table="metodopago" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dniCliente" length="20" />
+            </key>
+            <one-to-many class="model.Metodopago" />
+        </set>
+        <set name="notificacions" table="notificacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dniCliente" length="20" />
+            </key>
+            <one-to-many class="model.Notificacion" />
+        </set>
+        <set name="calificacions" table="calificacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dniCliente" length="20" not-null="true" />
+            </key>
+            <one-to-many class="model.Calificacion" />
+        </set>
+        <set name="alquilers" table="alquiler" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dniCliente" length="20" />
+            </key>
+            <one-to-many class="model.Alquiler" />
+        </set>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="dniCliente" length="20" />
+            </key>
+            <one-to-many class="model.Factura" />
+        </set>
+    </class>
+</hibernate-mapping>

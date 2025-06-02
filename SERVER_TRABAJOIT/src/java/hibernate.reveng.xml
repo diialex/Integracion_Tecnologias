@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
 <!--
 DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
 
@@ -39,25 +39,15 @@ made subject to such option by the copyright holder.
 
 Contributor(s):
 -->
-<hibernate-configuration>
-  <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/recar?zeroDateTimeBehavior=convertToNull</property>
-    <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password"/>
-    <property name="current_session_context_class">thread</property>
-    <property name="hibernate.show_sql">true</property>
-    <property name="hibernate.format_sql">true</property>
-    <property name="hibernate.hbm2ddl.auto">update</property>
-    <mapping resource="model/Notificacion.hbm.xml"/>
-    <mapping resource="model/Factura.hbm.xml"/>
-    <mapping resource="model/Cliente.hbm.xml"/>
-    <mapping resource="model/Jefe.hbm.xml"/>
-    <mapping resource="model/Metodopago.hbm.xml"/>
-    <mapping resource="model/Calificacion.hbm.xml"/>
-    <mapping resource="model/Alquiler.hbm.xml"/>
-    <mapping resource="model/Usuario.hbm.xml"/>
-    <mapping resource="model/Vehiculo.hbm.xml"/>
-  </session-factory>
-</hibernate-configuration>
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="recar"/>
+  <table-filter match-name="vehiculo"/>
+  <table-filter match-name="notificacion"/>
+  <table-filter match-name="cliente"/>
+  <table-filter match-name="calificacion"/>
+  <table-filter match-name="factura"/>
+  <table-filter match-name="alquiler"/>
+  <table-filter match-name="jefe"/>
+  <table-filter match-name="usuario"/>
+  <table-filter match-name="metodopago"/>
+</hibernate-reverse-engineering>

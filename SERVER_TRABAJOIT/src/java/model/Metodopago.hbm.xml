@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02-jun-2025 18:12:34 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Metodopago" table="metodopago" catalog="recar" optimistic-lock="version">
+        <id name="idMetodo" type="int">
+            <column name="idMetodo" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="cliente" class="model.Cliente" fetch="select">
+            <column name="dniCliente" length="20" />
+        </many-to-one>
+        <property name="numeroTarjeta" type="java.lang.Integer">
+            <column name="numeroTarjeta" />
+        </property>
+        <property name="fechaExp" type="date">
+            <column name="fechaExp" length="10" />
+        </property>
+        <property name="banco" type="string">
+            <column name="banco" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>
