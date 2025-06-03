@@ -5,12 +5,16 @@
  */
 package service;
 
+import model.DAO;
+
 /**
  *
  * @author jsaco
  */
 public class usuarioService {
 
+    private DAO dao;
+    
     public usuarioService() {
         
     }
