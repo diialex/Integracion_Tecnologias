@@ -5,10 +5,19 @@
  */
 package service;
 
+import java.util.*;
+import model.*;
+
 /**
  *
  * @author jsaco
  */
 public class alquilerService {
+    
+    private DAO dao;
+    
+    public alquilerService(){
+        
+    }
     
 }

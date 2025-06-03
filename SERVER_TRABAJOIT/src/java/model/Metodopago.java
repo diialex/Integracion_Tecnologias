@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,33 +10,28 @@ import java.util.Date;
 public class Metodopago  implements java.io.Serializable {
 
 
-     private int idMetodo;
+     private Long id;
      private Cliente cliente;
-     private Integer numeroTarjeta;
-     private Date fechaExp;
+     private Long numerotarjeta;
+     private Date fechaexp;
      private String banco;
 
     public Metodopago() {
     }
 
-	
-    public Metodopago(int idMetodo) {
-        this.idMetodo = idMetodo;
-    }
-    public Metodopago(int idMetodo, Cliente cliente, Integer numeroTarjeta, Date fechaExp, String banco) {
-       this.idMetodo = idMetodo;
+    public Metodopago(Cliente cliente, Long numerotarjeta, Date fechaexp, String banco) {
        this.cliente = cliente;
-       this.numeroTarjeta = numeroTarjeta;
-       this.fechaExp = fechaExp;
+       this.numerotarjeta = numerotarjeta;
+       this.fechaexp = fechaexp;
        this.banco = banco;
     }
    
-    public int getIdMetodo() {
-        return this.idMetodo;
+    public Long getId() {
+        return this.id;
     }
     
-    public void setIdMetodo(int idMetodo) {
-        this.idMetodo = idMetodo;
+    public void setId(Long id) {
+        this.id = id;
     }
     public Cliente getCliente() {
         return this.cliente;
@@ -45,19 +40,19 @@ public class Metodopago  implements java.io.Serializable {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    public Integer getNumeroTarjeta() {
-        return this.numeroTarjeta;
+    public Long getNumerotarjeta() {
+        return this.numerotarjeta;
     }
     
-    public void setNumeroTarjeta(Integer numeroTarjeta) {
-        this.numeroTarjeta = numeroTarjeta;
+    public void setNumerotarjeta(Long numerotarjeta) {
+        this.numerotarjeta = numerotarjeta;
     }
-    public Date getFechaExp() {
-        return this.fechaExp;
+    public Date getFechaexp() {
+        return this.fechaexp;
     }
     
-    public void setFechaExp(Date fechaExp) {
-        this.fechaExp = fechaExp;
+    public void setFechaexp(Date fechaexp) {
+        this.fechaexp = fechaexp;
     }
     public String getBanco() {
         return this.banco;

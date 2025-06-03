@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 
@@ -9,27 +9,22 @@ package model;
 public class Jefe  implements java.io.Serializable {
 
 
-     private String dniJefe;
+     private Long id;
      private Usuario usuario;
 
     public Jefe() {
     }
 
-	
-    public Jefe(String dniJefe) {
-        this.dniJefe = dniJefe;
-    }
-    public Jefe(String dniJefe, Usuario usuario) {
-       this.dniJefe = dniJefe;
+    public Jefe(Usuario usuario) {
        this.usuario = usuario;
     }
    
-    public String getDniJefe() {
-        return this.dniJefe;
+    public Long getId() {
+        return this.id;
     }
     
-    public void setDniJefe(String dniJefe) {
-        this.dniJefe = dniJefe;
+    public void setId(Long id) {
+        this.id = id;
     }
     public Usuario getUsuario() {
         return this.usuario;

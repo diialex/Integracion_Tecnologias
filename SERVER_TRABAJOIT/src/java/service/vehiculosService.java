@@ -5,10 +5,18 @@
  */
 package service;
 
+import model.DAO;
+
 /**
  *
  * @author jsaco
  */
 public class vehiculosService {
+    
+    private DAO dao;
+    
+    public vehiculosService(){
+        
+    }
     
 }

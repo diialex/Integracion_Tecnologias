@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,7 +11,7 @@ import java.util.Set;
 public class Cliente  implements java.io.Serializable {
 
 
-     private String dniCliente;
+     private Long id;
      private Usuario usuario;
      private Set metodopagos = new HashSet(0);
      private Set notificacions = new HashSet(0);
@@ -22,12 +22,7 @@ public class Cliente  implements java.io.Serializable {
     public Cliente() {
     }
 
-	
-    public Cliente(String dniCliente) {
-        this.dniCliente = dniCliente;
-    }
-    public Cliente(String dniCliente, Usuario usuario, Set metodopagos, Set notificacions, Set calificacions, Set alquilers, Set facturas) {
-       this.dniCliente = dniCliente;
+    public Cliente(Usuario usuario, Set metodopagos, Set notificacions, Set calificacions, Set alquilers, Set facturas) {
        this.usuario = usuario;
        this.metodopagos = metodopagos;
        this.notificacions = notificacions;
@@ -36,12 +31,12 @@ public class Cliente  implements java.io.Serializable {
        this.facturas = facturas;
     }
    
-    public String getDniCliente() {
-        return this.dniCliente;
+    public Long getId() {
+        return this.id;
     }
     
-    public void setDniCliente(String dniCliente) {
-        this.dniCliente = dniCliente;
+    public void setId(Long id) {
+        this.id = id;
     }
     public Usuario getUsuario() {
         return this.usuario;

@@ -7,16 +7,8 @@ package model;
 
 /**
  *
- * @author jsaco
+ * @author Ariel
  */
 public class DAO {
-    
-    //aquí iría el session
-    
-    public DAO(){
-        
-    }
-    
-    //aquí los métodos del DAO que consultan/registran entidades en BBDD
     
 }

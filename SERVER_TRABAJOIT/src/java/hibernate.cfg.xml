@@ -50,14 +50,14 @@ Contributor(s):
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-    <mapping resource="model/Notificacion.hbm.xml"/>
-    <mapping resource="model/Factura.hbm.xml"/>
-    <mapping resource="model/Cliente.hbm.xml"/>
-    <mapping resource="model/Jefe.hbm.xml"/>
     <mapping resource="model/Metodopago.hbm.xml"/>
+    <mapping resource="model/Factura.hbm.xml"/>
     <mapping resource="model/Calificacion.hbm.xml"/>
-    <mapping resource="model/Alquiler.hbm.xml"/>
-    <mapping resource="model/Usuario.hbm.xml"/>
     <mapping resource="model/Vehiculo.hbm.xml"/>
+    <mapping resource="model/Cliente.hbm.xml"/>
+    <mapping resource="model/Alquiler.hbm.xml"/>
+    <mapping resource="model/Notificacion.hbm.xml"/>
+    <mapping resource="model/Jefe.hbm.xml"/>
+    <mapping resource="model/Usuario.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

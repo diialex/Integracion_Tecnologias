@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,10 +11,11 @@ import java.util.Set;
 public class Usuario  implements java.io.Serializable {
 
 
+     private Long id;
      private String nick;
      private String contrasena;
      private String correo;
-     private Integer telefono;
+     private Long telefono;
      private String nombre;
      private String apellido1;
      private String apellido2;
@@ -24,11 +25,7 @@ public class Usuario  implements java.io.Serializable {
     public Usuario() {
     }
 
-	
-    public Usuario(String nick) {
-        this.nick = nick;
-    }
-    public Usuario(String nick, String contrasena, String correo, Integer telefono, String nombre, String apellido1, String apellido2, Set clientes, Set jefes) {
+    public Usuario(String nick, String contrasena, String correo, Long telefono, String nombre, String apellido1, String apellido2, Set clientes, Set jefes) {
        this.nick = nick;
        this.contrasena = contrasena;
        this.correo = correo;
@@ -40,6 +37,13 @@ public class Usuario  implements java.io.Serializable {
        this.jefes = jefes;
     }
    
+    public Long getId() {
+        return this.id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
     public String getNick() {
         return this.nick;
     }
@@ -61,11 +65,11 @@ public class Usuario  implements java.io.Serializable {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-    public Integer getTelefono() {
+    public Long getTelefono() {
         return this.telefono;
     }
     
-    public void setTelefono(Integer telefono) {
+    public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
     public String getNombre() {

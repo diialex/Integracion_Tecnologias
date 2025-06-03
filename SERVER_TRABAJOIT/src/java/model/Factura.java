@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -10,35 +10,30 @@ import java.util.Date;
 public class Factura  implements java.io.Serializable {
 
 
-     private String idFactura;
+     private Long id;
      private Alquiler alquiler;
      private Cliente cliente;
-     private Date fechaEmision;
+     private Date fechaemision;
      private Float importe;
-     private Integer iban;
+     private Long iban;
 
     public Factura() {
     }
 
-	
-    public Factura(String idFactura) {
-        this.idFactura = idFactura;
-    }
-    public Factura(String idFactura, Alquiler alquiler, Cliente cliente, Date fechaEmision, Float importe, Integer iban) {
-       this.idFactura = idFactura;
+    public Factura(Alquiler alquiler, Cliente cliente, Date fechaemision, Float importe, Long iban) {
        this.alquiler = alquiler;
        this.cliente = cliente;
-       this.fechaEmision = fechaEmision;
+       this.fechaemision = fechaemision;
        this.importe = importe;
        this.iban = iban;
     }
    
-    public String getIdFactura() {
-        return this.idFactura;
+    public Long getId() {
+        return this.id;
     }
     
-    public void setIdFactura(String idFactura) {
-        this.idFactura = idFactura;
+    public void setId(Long id) {
+        this.id = id;
     }
     public Alquiler getAlquiler() {
         return this.alquiler;
@@ -54,12 +49,12 @@ public class Factura  implements java.io.Serializable {
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
     }
-    public Date getFechaEmision() {
-        return this.fechaEmision;
+    public Date getFechaemision() {
+        return this.fechaemision;
     }
     
-    public void setFechaEmision(Date fechaEmision) {
-        this.fechaEmision = fechaEmision;
+    public void setFechaemision(Date fechaemision) {
+        this.fechaemision = fechaemision;
     }
     public Float getImporte() {
         return this.importe;
@@ -68,11 +63,11 @@ public class Factura  implements java.io.Serializable {
     public void setImporte(Float importe) {
         this.importe = importe;
     }
-    public Integer getIban() {
+    public Long getIban() {
         return this.iban;
     }
     
-    public void setIban(Integer iban) {
+    public void setIban(Long iban) {
         this.iban = iban;
     }
 

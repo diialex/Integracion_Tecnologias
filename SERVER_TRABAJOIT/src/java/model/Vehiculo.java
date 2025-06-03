@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -11,39 +11,34 @@ import java.util.Set;
 public class Vehiculo  implements java.io.Serializable {
 
 
-     private String idVehiculo;
+     private Long id;
      private String modelo;
      private String marca;
      private String tipo;
-     private String numPlaca;
-     private String estadoDisponibilidad;
+     private String numplaca;
+     private String estadodisponibilidad;
      private Set calificacions = new HashSet(0);
      private Set alquilers = new HashSet(0);
 
     public Vehiculo() {
     }
 
-	
-    public Vehiculo(String idVehiculo) {
-        this.idVehiculo = idVehiculo;
-    }
-    public Vehiculo(String idVehiculo, String modelo, String marca, String tipo, String numPlaca, String estadoDisponibilidad, Set calificacions, Set alquilers) {
-       this.idVehiculo = idVehiculo;
+    public Vehiculo(String modelo, String marca, String tipo, String numplaca, String estadodisponibilidad, Set calificacions, Set alquilers) {
        this.modelo = modelo;
        this.marca = marca;
        this.tipo = tipo;
-       this.numPlaca = numPlaca;
-       this.estadoDisponibilidad = estadoDisponibilidad;
+       this.numplaca = numplaca;
+       this.estadodisponibilidad = estadodisponibilidad;
        this.calificacions = calificacions;
        this.alquilers = alquilers;
     }
    
-    public String getIdVehiculo() {
-        return this.idVehiculo;
+    public Long getId() {
+        return this.id;
     }
     
-    public void setIdVehiculo(String idVehiculo) {
-        this.idVehiculo = idVehiculo;
+    public void setId(Long id) {
+        this.id = id;
     }
     public String getModelo() {
         return this.modelo;
@@ -66,19 +61,19 @@ public class Vehiculo  implements java.io.Serializable {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    public String getNumPlaca() {
-        return this.numPlaca;
+    public String getNumplaca() {
+        return this.numplaca;
     }
     
-    public void setNumPlaca(String numPlaca) {
-        this.numPlaca = numPlaca;
+    public void setNumplaca(String numplaca) {
+        this.numplaca = numplaca;
     }
-    public String getEstadoDisponibilidad() {
-        return this.estadoDisponibilidad;
+    public String getEstadodisponibilidad() {
+        return this.estadodisponibilidad;
     }
     
-    public void setEstadoDisponibilidad(String estadoDisponibilidad) {
-        this.estadoDisponibilidad = estadoDisponibilidad;
+    public void setEstadodisponibilidad(String estadodisponibilidad) {
+        this.estadodisponibilidad = estadodisponibilidad;
     }
     public Set getCalificacions() {
         return this.calificacions;

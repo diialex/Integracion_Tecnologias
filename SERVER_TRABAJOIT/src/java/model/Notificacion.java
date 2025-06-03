@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 
@@ -9,7 +9,7 @@ package model;
 public class Notificacion  implements java.io.Serializable {
 
 
-     private String idNotificacion;
+     private Long id;
      private Alquiler alquiler;
      private Cliente cliente;
      private String mensaje;
@@ -17,23 +17,18 @@ public class Notificacion  implements java.io.Serializable {
     public Notificacion() {
     }
 
-	
-    public Notificacion(String idNotificacion) {
-        this.idNotificacion = idNotificacion;
-    }
-    public Notificacion(String idNotificacion, Alquiler alquiler, Cliente cliente, String mensaje) {
-       this.idNotificacion = idNotificacion;
+    public Notificacion(Alquiler alquiler, Cliente cliente, String mensaje) {
        this.alquiler = alquiler;
        this.cliente = cliente;
        this.mensaje = mensaje;
     }
    
-    public String getIdNotificacion() {
-        return this.idNotificacion;
+    public Long getId() {
+        return this.id;
     }
     
-    public void setIdNotificacion(String idNotificacion) {
-        this.idNotificacion = idNotificacion;
+    public void setId(Long id) {
+        this.id = id;
     }
     public Alquiler getAlquiler() {
         return this.alquiler;

@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 
@@ -9,7 +9,7 @@ package model;
 public class Calificacion  implements java.io.Serializable {
 
 
-     private CalificacionId id;
+     private Long id;
      private Cliente cliente;
      private Vehiculo vehiculo;
      private Integer estrellas;
@@ -18,25 +18,18 @@ public class Calificacion  implements java.io.Serializable {
     public Calificacion() {
     }
 
-	
-    public Calificacion(CalificacionId id, Cliente cliente, Vehiculo vehiculo) {
-        this.id = id;
-        this.cliente = cliente;
-        this.vehiculo = vehiculo;
-    }
-    public Calificacion(CalificacionId id, Cliente cliente, Vehiculo vehiculo, Integer estrellas, String valoracion) {
-       this.id = id;
+    public Calificacion(Cliente cliente, Vehiculo vehiculo, Integer estrellas, String valoracion) {
        this.cliente = cliente;
        this.vehiculo = vehiculo;
        this.estrellas = estrellas;
        this.valoracion = valoracion;
     }
    
-    public CalificacionId getId() {
+    public Long getId() {
         return this.id;
     }
     
-    public void setId(CalificacionId id) {
+    public void setId(Long id) {
         this.id = id;
     }
     public Cliente getCliente() {

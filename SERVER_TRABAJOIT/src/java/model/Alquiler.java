@@ -1,5 +1,5 @@
 package model;
-// Generated 02-jun-2025 18:12:33 by Hibernate Tools 4.3.1
+// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -12,37 +12,32 @@ import java.util.Set;
 public class Alquiler  implements java.io.Serializable {
 
 
-     private String idAlquiler;
+     private Long id;
      private Cliente cliente;
      private Vehiculo vehiculo;
-     private Date fechaFin;
-     private Integer estadoAlquiler;
+     private Date fechafin;
+     private Integer estadoalquiler;
      private Set notificacions = new HashSet(0);
      private Set facturas = new HashSet(0);
 
     public Alquiler() {
     }
 
-	
-    public Alquiler(String idAlquiler) {
-        this.idAlquiler = idAlquiler;
-    }
-    public Alquiler(String idAlquiler, Cliente cliente, Vehiculo vehiculo, Date fechaFin, Integer estadoAlquiler, Set notificacions, Set facturas) {
-       this.idAlquiler = idAlquiler;
+    public Alquiler(Cliente cliente, Vehiculo vehiculo, Date fechafin, Integer estadoalquiler, Set notificacions, Set facturas) {
        this.cliente = cliente;
        this.vehiculo = vehiculo;
-       this.fechaFin = fechaFin;
-       this.estadoAlquiler = estadoAlquiler;
+       this.fechafin = fechafin;
+       this.estadoalquiler = estadoalquiler;
        this.notificacions = notificacions;
        this.facturas = facturas;
     }
    
-    public String getIdAlquiler() {
-        return this.idAlquiler;
+    public Long getId() {
+        return this.id;
     }
     
-    public void setIdAlquiler(String idAlquiler) {
-        this.idAlquiler = idAlquiler;
+    public void setId(Long id) {
+        this.id = id;
     }
     public Cliente getCliente() {
         return this.cliente;
@@ -58,19 +53,19 @@ public class Alquiler  implements java.io.Serializable {
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
-    public Date getFechaFin() {
-        return this.fechaFin;
+    public Date getFechafin() {
+        return this.fechafin;
     }
     
-    public void setFechaFin(Date fechaFin) {
-        this.fechaFin = fechaFin;
+    public void setFechafin(Date fechafin) {
+        this.fechafin = fechafin;
     }
-    public Integer getEstadoAlquiler() {
-        return this.estadoAlquiler;
+    public Integer getEstadoalquiler() {
+        return this.estadoalquiler;
     }
     
-    public void setEstadoAlquiler(Integer estadoAlquiler) {
-        this.estadoAlquiler = estadoAlquiler;
+    public void setEstadoalquiler(Integer estadoalquiler) {
+        this.estadoalquiler = estadoalquiler;
     }
     public Set getNotificacions() {
         return this.notificacions;

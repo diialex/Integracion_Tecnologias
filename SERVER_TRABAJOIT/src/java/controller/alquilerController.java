@@ -5,9 +5,12 @@
  */
 package controller;
 
+import java.util.*;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import model.*;
+import service.alquilerService;
 
 /**
  *
@@ -16,6 +19,8 @@ import javax.jws.WebParam;
 @WebService(serviceName = "alquilerController")
 public class alquilerController {
 
+    
+    private alquilerService as;
      /**
      * AQUI VAN TODOS LOS WEBSERVICES-MÉTODOS QUE LLAMARÁ EL CLIENTE
      * en este caso relacionados a los casos relacionados con los alquileres
@@ -28,4 +33,10 @@ public class alquilerController {
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
     }
+    
+    @WebMethod(operationName = "createFactura")
+    public void createFactura(Alquiler alquiler, Cliente cliente, Date fecha, Float importe, Integer iban) {
+        
+    }
+    
 }

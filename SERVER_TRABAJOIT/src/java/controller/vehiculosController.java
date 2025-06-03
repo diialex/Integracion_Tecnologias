@@ -8,6 +8,7 @@ package controller;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import service.vehiculosService;
 
 /**
  *
@@ -16,6 +17,7 @@ import javax.jws.WebParam;
 @WebService(serviceName = "vehiculosController")
 public class vehiculosController {
 
+    private vehiculosService vs;
      /**
      * AQUI VAN TODOS LOS WEBSERVICES-MÉTODOS QUE LLAMARÁ EL CLIENTE
      * en este caso relacionados a los casos de uso de alta-baja-modif de vehículo por parte del jefe etc

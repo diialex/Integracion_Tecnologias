@@ -17,6 +17,8 @@ import service.usuarioService;
 @WebService(serviceName = "usuarioController")
 public class usuarioController {
 
+    private usuarioService us;
+    
     /**
      * AQUI VAN TODOS LOS WEBSERVICES-MÉTODOS QUE LLAMARÁ EL CLIENTE
      * en este caso relacionados a los casos de uso de usuario
