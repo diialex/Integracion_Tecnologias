@@ -40,7 +40,6 @@ public class alquilerController {
         return facts;
     }
     
-    
     @WebMethod(operationName = "removeFactura")
     public void createFactura(Factura fac) {
         as.removeFactura(fac);
@@ -59,5 +58,11 @@ public class alquilerController {
     @WebMethod(operationName = "updatePayMethod")
     public void updatePayMethod(Metodopago m) {
         as.updatePayMethod(m);
+    }
+    
+    @WebMethod(operationName = "listPayMethods")
+    public List<Metodopago> listPayMethods() {
+        List<Metodopago> pagos = as.listPayMethods();
+        return pagos;
     }
  }

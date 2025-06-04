@@ -1,38 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="alquilerService">
-      <implementation-class>service.alquilerService</implementation-class>
-      <wsdl-url>http://localhost:8080/SERVER_TRABAJOIT/alquilerController?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/SERVER_TRABAJOIT/alquilerController.wsdl</local-wsdl-file>
-      <service-name>alquilerController</service-name>
-      <port-name>alquilerControllerPort</port-name>
-      <package-name>controller</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <use-provider>false</use-provider>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </service>
   </services>
   <clients/>
   <jsr109>true</jsr109>

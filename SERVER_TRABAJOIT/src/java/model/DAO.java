@@ -51,7 +51,7 @@ public class DAO {
         tx.commit();
     }
     
-    public List<Metodopago> getPayMethod(){
+    public List<Metodopago> getPayMethods(){
         session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
         Query q = session.createQuery("FROM metodopago");

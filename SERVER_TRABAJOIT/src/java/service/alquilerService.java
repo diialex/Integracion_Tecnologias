@@ -41,4 +41,8 @@ public class alquilerService {
         List<Factura> facts = dao.getFacturas();
         return facts;
     }
+    public List<Metodopago> listPayMethods(){
+        List<Metodopago> pagos = dao.getPayMethods();
+        return pagos;
+    }
 }
