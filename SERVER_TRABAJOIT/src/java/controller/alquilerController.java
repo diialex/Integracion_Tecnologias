@@ -35,8 +35,27 @@ public class alquilerController {
     }
     
     @WebMethod(operationName = "createFactura")
-    public void createFactura(Alquiler alquiler, Cliente cliente, Date fecha, Float importe, Integer iban) {
-        
+    public void createFactura(Alquiler alquiler, Cliente cliente, Date fecha, Float importe, Long iban) {
+        as.newFactura(alquiler, cliente, fecha, importe, iban);
     }
     
-}
+    @WebMethod(operationName = "removeFactura")
+    public void createFactura(Factura fac) {
+        as.removeFactura(fac);
+    }
+    
+    @WebMethod(operationName = "createPayMethod")
+    public void createPayMethod(Cliente cliente, Long num, Date fechaexp, String banco) {
+        as.newPayMethod(cliente, num, fechaexp, banco);
+    }
+    
+    @WebMethod(operationName = "removePayMethod")
+    public void removePayMethod(Metodopago m) {
+        as.removePayMethod(m);
+    }
+    
+    @WebMethod(operationName = "updatePayMethod")
+    public void updatePayMethod(Metodopago m) {
+        as.updatePayMethod(m);
+    }
+ }

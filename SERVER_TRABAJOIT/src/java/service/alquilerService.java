@@ -14,10 +14,27 @@ import model.*;
  */
 public class alquilerService {
     
-    private DAO dao;
+    private static DAO dao;
     
     public alquilerService(){
         
     }
     
+    public void newFactura(Alquiler al, Cliente cl, Date fecha, Float importe, Long iban){
+        dao.newFactura(al, cl, fecha, importe, iban);
+    }
+    
+    public void newPayMethod(Cliente cliente, Long num, Date fechaexp, String banco){
+        dao.newPayMethod(cliente, num, fechaexp, banco);
+    }
+    
+    public void removeFactura(Factura f){
+        dao.removeFactura(f);
+    }
+    public void removePayMethod(Metodopago m){
+        dao.removePayMethod(m);
+    }
+    public void updatePayMethod(Metodopago m){
+        dao.updatePayMethod(m);
+    }
 }
