@@ -29,15 +29,17 @@ public class alquilerController {
     //Solo se usan como metodos de llamada para el cliente, que ejecutan el service correspondiente
     //los service del paquete service son los que llaman al DAO y realizan las acciones en condiciones
     
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
-    }
-    
     @WebMethod(operationName = "createFactura")
     public void createFactura(Alquiler alquiler, Cliente cliente, Date fecha, Float importe, Long iban) {
         as.newFactura(alquiler, cliente, fecha, importe, iban);
     }
+    
+    @WebMethod(operationName = "listFacturas")
+    public List<Factura> listFacturas() {
+        List<Factura> facts = as.listFacturas();
+        return facts;
+    }
+    
     
     @WebMethod(operationName = "removeFactura")
     public void createFactura(Factura fac) {

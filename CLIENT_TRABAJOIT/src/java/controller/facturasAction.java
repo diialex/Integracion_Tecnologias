@@ -22,6 +22,16 @@ public class facturasAction extends ActionSupport {
     
     public String execute() throws Exception {
         
+        try{
+            service.alquilerService ser = new service.alquilerService();
+            facturas = ser.listFacturas();
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        if(facturas!=null){
+            return SUCCESS;
+        }else
+            return ERROR;
     }
     
 }

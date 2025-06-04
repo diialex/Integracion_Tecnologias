@@ -37,4 +37,8 @@ public class alquilerService {
     public void updatePayMethod(Metodopago m){
         dao.updatePayMethod(m);
     }
+    public List<Factura> listFacturas(){
+        List<Factura> facts = dao.getFacturas();
+        return facts;
+    }
 }

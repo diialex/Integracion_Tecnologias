@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://controller/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://controller/">
+
+<xs:element name="createFactura" type="tns:createFactura"/>
+
+<xs:element name="createFacturaResponse" type="tns:createFacturaResponse"/>
+
+<xs:element name="createPayMethod" type="tns:createPayMethod"/>
+
+<xs:element name="createPayMethodResponse" type="tns:createPayMethodResponse"/>
+
+<xs:element name="listFacturas" type="tns:listFacturas"/>
+
+<xs:element name="listFacturasResponse" type="tns:listFacturasResponse"/>
+
+<xs:element name="removeFactura" nillable="true" type="tns:createFactura"/>
+
+<xs:element name="removeFacturaResponse" nillable="true" type="tns:createFacturaResponse"/>
+
+<xs:element name="removePayMethod" type="tns:removePayMethod"/>
+
+<xs:element name="removePayMethodResponse" type="tns:removePayMethodResponse"/>
+
+<xs:element name="updatePayMethod" type="tns:updatePayMethod"/>
+
+<xs:element name="updatePayMethodResponse" type="tns:updatePayMethodResponse"/>
+
+<xs:complexType name="createPayMethod">
+<xs:sequence>
+<xs:element name="arg0" type="tns:cliente" minOccurs="0"/>
+<xs:element name="arg1" type="xs:long" minOccurs="0"/>
+<xs:element name="arg2" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg3" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cliente">
+<xs:sequence>
+<xs:element name="alquilers" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="calificacions" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="facturas" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="metodopagos" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="notificacions" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="usuario" type="tns:usuario" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="usuario">
+<xs:sequence>
+<xs:element name="apellido1" type="xs:string" minOccurs="0"/>
+<xs:element name="apellido2" type="xs:string" minOccurs="0"/>
+<xs:element name="clientes" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="contrasena" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="jefes" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="nick" type="xs:string" minOccurs="0"/>
+<xs:element name="nombre" type="xs:string" minOccurs="0"/>
+<xs:element name="telefono" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createPayMethodResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="updatePayMethod">
+<xs:sequence>
+<xs:element name="arg0" type="tns:metodopago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="metodopago">
+<xs:sequence>
+<xs:element name="banco" type="xs:string" minOccurs="0"/>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+<xs:element name="fechaexp" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="numerotarjeta" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updatePayMethodResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listFacturas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listFacturasResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:factura" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="factura">
+<xs:sequence>
+<xs:element name="alquiler" type="tns:alquiler" minOccurs="0"/>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+<xs:element name="fechaemision" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="iban" type="xs:long" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="importe" type="xs:float" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="alquiler">
+<xs:sequence>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+<xs:element name="estadoalquiler" type="xs:int" minOccurs="0"/>
+<xs:element name="facturas" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="fechafin" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="notificacions" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="vehiculo" type="tns:vehiculo" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="vehiculo">
+<xs:sequence>
+<xs:element name="alquilers" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="calificacions" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="estadodisponibilidad" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="marca" type="xs:string" minOccurs="0"/>
+<xs:element name="modelo" type="xs:string" minOccurs="0"/>
+<xs:element name="numplaca" type="xs:string" minOccurs="0"/>
+<xs:element name="tipo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removePayMethod">
+<xs:sequence>
+<xs:element name="arg0" type="tns:metodopago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removePayMethodResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="createFactura">
+<xs:sequence>
+<xs:element name="arg0" type="tns:alquiler" minOccurs="0"/>
+<xs:element name="arg1" type="tns:cliente" minOccurs="0"/>
+<xs:element name="arg2" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg3" type="xs:float" minOccurs="0"/>
+<xs:element name="arg4" type="xs:long" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createFacturaResponse">
+<xs:sequence/>
+</xs:complexType>
+</xs:schema>
