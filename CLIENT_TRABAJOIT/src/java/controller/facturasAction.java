@@ -16,6 +16,7 @@ import model.*;
 public class facturasAction extends ActionSupport {
     
     private List <Factura> facturas;
+    private String id;
     
     public facturasAction() {
     }

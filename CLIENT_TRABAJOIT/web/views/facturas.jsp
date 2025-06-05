@@ -8,27 +8,33 @@
 <%@taglib prefix="s"  uri="/struts-tags"%>
 
 <s:if test="facturas!=null">
-    
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Facturas</title>
-    </head>
-    <body>
-        <h1>Facturas de <s:property value="usuario"/></h1>
-        <table>
-            <th>
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Facturas</title>
+        </head>
+        <body>
+            <h1>Facturas de <s:property value="usuario.nombre"/></h1>
+            
+            <table>
+                <th>
                 <td><b>Id</b></td>
                 <td><b>Importe</b></td>
                 <td><b>Cliente</b></td>
                 <td><b>Id Alquiler</b></td>
             </th>
-            
-            
-            <tr>
-                <td></td>
-            </tr>
+
+            <s:iterator value="facturas" id="f">
+                <tr>
+                    <td><s:property value="%{#f.id}"/></td>
+                    <td><s:property value="%{#f.importe}"/></td>
+                    <td><s:property value="%{#f.cliente.usuario.nombre}"/></td>
+                    <td><s:property value="%{#f.alquiler.id}"/></td>
+                </tr>
+            </s:iterator>
+
         </table>
     </body>
 </html>

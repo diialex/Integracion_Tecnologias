@@ -3,8 +3,14 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+    <import file="facturas.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        
+        <action name="facturasAction">
+            <result type="chain">
+                <param name="namespace">/facturas</param>
+                <param name="actionName">facturasAction</param>
+            </result>
+        </action>
     </package>
 </struts>
