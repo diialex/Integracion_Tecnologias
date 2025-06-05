@@ -14,7 +14,7 @@ import model.*;
  * @author Ariel
  */
 public class facturasAction extends ActionSupport {
-    
+
     private List <Factura> facturas;
     
     public facturasAction() {
@@ -22,6 +22,16 @@ public class facturasAction extends ActionSupport {
     
     public String execute() throws Exception {
         
+        try{
+            service.alquilerService ser = new service.alquilerService();
+            
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        if(facturas!=null){
+            return SUCCESS;
+        }else
+            return ERROR;
     }
     
 }

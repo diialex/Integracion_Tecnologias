@@ -5,9 +5,18 @@
  */
 package controller;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Set;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import model.Alquiler;
+import model.Calificacion;
+import model.Cliente;
+import model.Factura;
+import model.Metodopago;
+import model.Vehiculo;
 import service.vehiculosService;
 
 /**
@@ -30,4 +39,55 @@ public class vehiculosController {
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
     }
+    
+    
+    @WebMethod(operationName = "createVehiculo")
+    public void createVehiculo(String modelo, String marca, String tipo, String numplaca, String estadodisponibilidad, Set calificacions, Set alquilers) {
+        vs.newVehiculo(modelo, marca, tipo, numplaca, estadodisponibilidad, calificacions, alquilers);
+    }
+    
+    @WebMethod(operationName = "removeVehiculo")
+    public void createFactura(Vehiculo veh) {
+        vs.removeVehiculo(veh);
+    }
+    
+    @WebMethod(operationName = "updateVehiculo")
+    public void updateVehiculo(Vehiculo v) {
+        vs.updateVehiculo(v);
+    }
+    
+    @WebMethod(operationName = "getVehiculos")
+    public List<Vehiculo> getVehiculos(){
+       return vs.getVehiculos();
+    }
+    
+    
+    
+    
+    @WebMethod(operationName = "createCalificacion")
+    public void createCalificacion(Cliente cliente, Vehiculo vehiculo, Integer estrellas, String  valoracion) {
+        vs.newCalificacion(cliente, vehiculo, estrellas, valoracion);
+    }
+    
+    @WebMethod(operationName = "removeCalificacion")
+    public void removeCalificacion(Calificacion c) {
+        vs.removeCalificacion(c);
+    }
+    
+    @WebMethod(operationName = "updateCalificacion")
+    public void updateCalificacion(Calificacion c) {
+        vs.updateCalificacion(c);
+    }
+    
+    @WebMethod(operationName = "getCalificaciones")
+    public List<Calificacion> getCalificaciones(){
+       return vs.getCalificaciones();
+    }
+    
+    @WebMethod(operationName = "getClientCalificaciones")
+    public List<Calificacion> getClienteCalifs(String dni){
+        return vs.getClienteCalifs(dni);
+    }
+    
+    
 }
