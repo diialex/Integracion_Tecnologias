@@ -3,14 +3,18 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-    <import file="facturas.xml"/>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
-        <action name="facturasAction">
+        <action name="">
             <result type="chain">
-                <param name="namespace">/facturas</param>
                 <param name="actionName">facturasAction</param>
             </result>
+        </action>
+    </package>
+    <package name="actions" extends="struts-default">
+        <action name="facturasAction" class="controller.facturasAction">
+            <result name="success">/views/facturas.jsp</result>
+            <result name="error">/views/newPayMethod.jsp</result>
         </action>
     </package>
 </struts>

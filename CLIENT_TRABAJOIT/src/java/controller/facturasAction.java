@@ -15,7 +15,8 @@ import model.*;
  */
 public class facturasAction extends ActionSupport {
 
-    private List<service.Factura> facturas;
+    private List<service.Factura> facturasAux;
+    private List<Factura> facturas;
     private String dni;
 
     public facturasAction() {
@@ -32,7 +33,7 @@ public class facturasAction extends ActionSupport {
             
             service.AlquilerController_Service service = new service.AlquilerController_Service();
             service.AlquilerController port = service.getAlquilerControllerPort();
-            facturas = port.listFacturas();
+            facturasAux = port.listFacturas();
             //facturas = port.listFacturasClient(dni);*/
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -43,5 +44,5 @@ public class facturasAction extends ActionSupport {
             return ERROR;
         }
     }
-
+    
 }

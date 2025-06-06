@@ -16,7 +16,7 @@
             <title>Facturas</title>
         </head>
         <body>
-            <h1>Facturas de <s:property value="usuario.nombre"/></h1>
+            <h1>Facturas de tuvieja</h1>
             
             <table>
                 <th>
