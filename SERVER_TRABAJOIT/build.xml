@@ -7,8 +7,8 @@
 <!-- the Compile on Save feature is turned off for the project. -->
 <!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
 <!-- in the project's Project Properties dialog box.-->
-<project name="SERVER_TRABAJOIT" default="default" basedir=".">
-    <description>Builds, tests, and runs the project SERVER_TRABAJOIT.</description>
+<project name="AUX_SERVER" default="default" basedir=".">
+    <description>Builds, tests, and runs the project AUX_SERVER.</description>
     <import file="nbproject/build-impl.xml"/>
     <!--
 

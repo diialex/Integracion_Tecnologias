@@ -34,6 +34,14 @@ public class alquilerController {
         return "Hello " + txt + " !";
     }
     
+    @WebMethod(operationName = "createAlquiler")
+    public String createAlquiler(Cliente cliente, Vehiculo vehiculo, Date fechafin, Integer estadoalquiler) {
+        String check = as.newAlquiler(cliente, vehiculo, fechafin, estadoalquiler);
+        
+        return check;
+    }
+    
+    /*
     @WebMethod(operationName = "createFactura")
     public void createFactura(Alquiler alquiler, Cliente cliente, Date fecha, Float importe, Long iban) {
         as.newFactura(alquiler, cliente, fecha, importe, iban);
@@ -58,4 +66,5 @@ public class alquilerController {
     public void updatePayMethod(Metodopago m) {
         as.updatePayMethod(m);
     }
+    */
  }

@@ -1,5 +1,5 @@
 package model;
-// Generated 04-jun-2025 0:19:54 by Hibernate Tools 4.3.1
+// Generated 06-jun-2025 18:54:37 by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -21,6 +21,13 @@ public class Alquiler  implements java.io.Serializable {
      private Set facturas = new HashSet(0);
 
     public Alquiler() {
+    }
+    
+    public Alquiler(Cliente cliente, Vehiculo vehiculo, Date fechafin, Integer estadoalquiler) {
+       this.cliente = cliente;
+       this.vehiculo = vehiculo;
+       this.fechafin = fechafin;
+       this.estadoalquiler = estadoalquiler;
     }
 
     public Alquiler(Cliente cliente, Vehiculo vehiculo, Date fechafin, Integer estadoalquiler, Set notificacions, Set facturas) {

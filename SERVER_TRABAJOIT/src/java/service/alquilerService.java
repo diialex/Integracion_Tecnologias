@@ -15,11 +15,24 @@ import model.*;
 public class alquilerService {
     
     private static DAO dao;
+    private static final String SUCCESS = "SUCCESS";
+    private static final String ERROR = "ERROR";
     
     public alquilerService(){
         
     }
     
+    public String newAlquiler(Cliente cliente, Vehiculo vehiculo, Date fechafin, Integer estadoalquiler){
+        Alquiler nuevoAlquiler = new Alquiler(cliente, vehiculo, fechafin, estadoalquiler);
+        boolean insertado = dao.addAlquiler(nuevoAlquiler);
+        
+        if(insertado){
+            return SUCCESS;
+        }else{
+            return ERROR;
+        }
+    }
+    /*
     public void newFactura(Alquiler al, Cliente cl, Date fecha, Float importe, Long iban){
         dao.newFactura(al, cl, fecha, importe, iban);
     }
@@ -37,4 +50,5 @@ public class alquilerService {
     public void updatePayMethod(Metodopago m){
         dao.updatePayMethod(m);
     }
+    */
 }

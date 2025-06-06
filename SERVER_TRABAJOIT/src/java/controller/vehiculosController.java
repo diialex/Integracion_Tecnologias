@@ -5,9 +5,12 @@
  */
 package controller;
 
+import java.util.Collections;
+import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import model.Vehiculo;
 import service.vehiculosService;
 
 /**
@@ -17,7 +20,7 @@ import service.vehiculosService;
 @WebService(serviceName = "vehiculosController")
 public class vehiculosController {
 
-    private vehiculosService vs;
+    //private vehiculosService vs = new service.vehiculosService();
      /**
      * AQUI VAN TODOS LOS WEBSERVICES-MÉTODOS QUE LLAMARÁ EL CLIENTE
      * en este caso relacionados a los casos de uso de alta-baja-modif de vehículo por parte del jefe etc
@@ -29,5 +32,19 @@ public class vehiculosController {
     @WebMethod(operationName = "hello")
     public String hello(@WebParam(name = "name") String txt) {
         return "Hello " + txt + " !";
+    }
+    
+    @WebMethod(operationName = "getVehiculos")
+    public List<Vehiculo> getVehiculos() {
+        try{
+            vehiculosService vs = new service.vehiculosService();
+            //String check = as.newAlquiler(cliente, vehiculo, fechafin, estadoalquiler);
+            List<Vehiculo> lista= vs.consultaVehiculos();
+            return lista;
+        }catch(Exception e){
+            System.err.println("Error en getVehiculos(): " + e.getMessage());
+            e.printStackTrace();
+            return Collections.emptyList();
+        }
     }
 }
