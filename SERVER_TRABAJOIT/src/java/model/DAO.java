@@ -27,10 +27,10 @@ public class DAO {
         return facturas;
     }
     
-    public List<Factura> getFacturasCliente(String id){
+    public List<Factura> getFacturasCliente(String dni){
         session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
-        Query q = session.createQuery("FROM factura WHERE idCliente = " + id);
+        Query q = session.createQuery("FROM factura WHERE dnicliente = " + dni);
         List<Factura> facturas = (List<Factura>) q.list();
         tx.commit();
         return facturas;

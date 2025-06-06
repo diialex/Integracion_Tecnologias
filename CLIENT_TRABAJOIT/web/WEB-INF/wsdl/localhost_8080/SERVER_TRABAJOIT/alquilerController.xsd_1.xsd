@@ -10,9 +10,17 @@
 
 <xs:element name="listFacturas" type="tns:listFacturas"/>
 
+<xs:element name="listFacturasClient" type="tns:listFacturasClient"/>
+
+<xs:element name="listFacturasClientResponse" type="tns:listFacturasClientResponse"/>
+
 <xs:element name="listFacturasResponse" type="tns:listFacturasResponse"/>
 
 <xs:element name="listPayMethods" type="tns:listPayMethods"/>
+
+<xs:element name="listPayMethodsClient" type="tns:listPayMethodsClient"/>
+
+<xs:element name="listPayMethodsClientResponse" type="tns:listPayMethodsClientResponse"/>
 
 <xs:element name="listPayMethodsResponse" type="tns:listPayMethodsResponse"/>
 
@@ -28,11 +36,13 @@
 
 <xs:element name="updatePayMethodResponse" type="tns:updatePayMethodResponse"/>
 
-<xs:complexType name="listPayMethods">
-<xs:sequence/>
+<xs:complexType name="listPayMethodsClient">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="listPayMethodsResponse">
+<xs:complexType name="listPayMethodsClientResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:metodopago" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
@@ -75,6 +85,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="listPayMethods">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="listPayMethodsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:metodopago" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="createPayMethod">
 <xs:sequence>
 <xs:element name="arg0" type="tns:cliente" minOccurs="0"/>
@@ -98,23 +118,26 @@
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="removePayMethod">
+<xs:complexType name="listFacturasClient">
 <xs:sequence>
-<xs:element name="arg0" type="tns:metodopago" minOccurs="0"/>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="removePayMethodResponse">
-<xs:sequence/>
+<xs:complexType name="listFacturasClientResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:factura" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="createFactura">
+<xs:complexType name="factura">
 <xs:sequence>
-<xs:element name="arg0" type="tns:alquiler" minOccurs="0"/>
-<xs:element name="arg1" type="tns:cliente" minOccurs="0"/>
-<xs:element name="arg2" type="xs:dateTime" minOccurs="0"/>
-<xs:element name="arg3" type="xs:float" minOccurs="0"/>
-<xs:element name="arg4" type="xs:long" minOccurs="0"/>
+<xs:element name="alquiler" type="tns:alquiler" minOccurs="0"/>
+<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
+<xs:element name="fechaemision" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="iban" type="xs:long" minOccurs="0"/>
+<xs:element name="id" type="xs:long" minOccurs="0"/>
+<xs:element name="importe" type="xs:float" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -143,10 +166,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="createFacturaResponse">
-<xs:sequence/>
-</xs:complexType>
-
 <xs:complexType name="listFacturas">
 <xs:sequence/>
 </xs:complexType>
@@ -157,14 +176,27 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="factura">
+<xs:complexType name="createFactura">
 <xs:sequence>
-<xs:element name="alquiler" type="tns:alquiler" minOccurs="0"/>
-<xs:element name="cliente" type="tns:cliente" minOccurs="0"/>
-<xs:element name="fechaemision" type="xs:dateTime" minOccurs="0"/>
-<xs:element name="iban" type="xs:long" minOccurs="0"/>
-<xs:element name="id" type="xs:long" minOccurs="0"/>
-<xs:element name="importe" type="xs:float" minOccurs="0"/>
+<xs:element name="arg0" type="tns:alquiler" minOccurs="0"/>
+<xs:element name="arg1" type="tns:cliente" minOccurs="0"/>
+<xs:element name="arg2" type="xs:dateTime" minOccurs="0"/>
+<xs:element name="arg3" type="xs:float" minOccurs="0"/>
+<xs:element name="arg4" type="xs:long" minOccurs="0"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createFacturaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="removePayMethod">
+<xs:sequence>
+<xs:element name="arg0" type="tns:metodopago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removePayMethodResponse">
+<xs:sequence/>
 </xs:complexType>
 </xs:schema>

@@ -14,25 +14,34 @@ import model.*;
  * @author Ariel
  */
 public class facturasAction extends ActionSupport {
-    
-    private List <Factura> facturas;
-    private String id;
-    
+
+    private List<service.Factura> facturas;
+    private String dni;
+
     public facturasAction() {
     }
-    
+
     public String execute() throws Exception {
         
-        try{
+        //rescatar dni de la vista anterior
+
+        try {
+            /*
             service.alquilerService ser = new service.alquilerService();
-            facturas = ser.listFacturas();
-        }catch (Exception ex){
+            facturas = ser.listFacturas();*/
+            
+            service.AlquilerController_Service service = new service.AlquilerController_Service();
+            service.AlquilerController port = service.getAlquilerControllerPort();
+            facturas = port.listFacturas();
+            //facturas = port.listFacturasClient(dni);*/
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        if(facturas!=null){
+        if (facturas != null) {
             return SUCCESS;
-        }else
+        } else {
             return ERROR;
+        }
     }
-    
+
 }

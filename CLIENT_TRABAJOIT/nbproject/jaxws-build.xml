@@ -26,24 +26,21 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-service-alquilerService" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/service/alquilerService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/service/alquilerService" destdir="${build.generated.dir}/jax-wsCache/service/alquilerService" wsdl="${basedir}/${conf-dir}xml-resources/web-services/alquilerService/wsdl/localhost_8080/SERVER_TRABAJOIT/alquilerController.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-services/alquilerService/wsdl/localhost_8080/SERVER_TRABAJOIT/alquilerController.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/service/alquilerService"/>
+    <target name="wsimport-client-alquilerController" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/alquilerController"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/alquilerController" destdir="${build.generated.dir}/jax-wsCache/alquilerController" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/alquilerController/wsdl/localhost_8080/SERVER_TRABAJOIT/alquilerController.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/SERVER_TRABAJOIT/alquilerController?WSDL" xnocompile="true" xendorsed="true" package="service">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/alquilerController/wsdl/localhost_8080/SERVER_TRABAJOIT/alquilerController.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/alquilerController"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/service/alquilerService">
+            <fileset dir="${build.generated.dir}/jax-wsCache/alquilerController">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
-        <copy todir="${build.web.dir}/WEB-INF/wsdl/alquilerService">
-            <fileset dir="${basedir}/${conf-dir}xml-resources/web-services/alquilerService/wsdl/"/>
-        </copy>
     </target>
-    <target name="wsimport-service-clean-alquilerService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/controller"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/service/alquilerService"/>
+    <target name="wsimport-client-clean-alquilerController" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/service"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/alquilerController"/>
     </target>
-    <target name="wsimport-service-generate" depends="wsimport-service-alquilerService"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-alquilerController"/>
 </project>

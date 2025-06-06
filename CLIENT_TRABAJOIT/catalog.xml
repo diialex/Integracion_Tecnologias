@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/SERVER_TRABAJOIT/alquilerController?WSDL" uri="src/conf/xml-resources/web-services/alquilerService/wsdl/localhost_8080/SERVER_TRABAJOIT/alquilerController.wsdl"/>
-    <system systemId="http://localhost:8080/SERVER_TRABAJOIT/alquilerController?xsd=1" uri="src/conf/xml-resources/web-services/alquilerService/wsdl/localhost_8080/SERVER_TRABAJOIT/alquilerController.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SERVER_TRABAJOIT/vehiculosController?WSDL" uri="src/conf/xml-resources/web-service-references/vehiculosController/wsdl/localhost_8080/SERVER_TRABAJOIT/vehiculosController.wsdl"/>
+    <system systemId="http://localhost:8080/SERVER_TRABAJOIT/vehiculosController?xsd=1" uri="src/conf/xml-resources/web-service-references/vehiculosController/wsdl/localhost_8080/SERVER_TRABAJOIT/vehiculosController.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/SERVER_TRABAJOIT/alquilerController?WSDL" uri="src/conf/xml-resources/web-service-references/alquilerController/wsdl/localhost_8080/SERVER_TRABAJOIT/alquilerController.wsdl"/>
+    <system systemId="http://localhost:8080/SERVER_TRABAJOIT/alquilerController?xsd=1" uri="src/conf/xml-resources/web-service-references/alquilerController/wsdl/localhost_8080/SERVER_TRABAJOIT/alquilerController.xsd_1.xsd"/>
 </catalog>

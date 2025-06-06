@@ -4,23 +4,23 @@
 <xsd:import namespace="http://controller/" schemaLocation="http://localhost:8080/SERVER_TRABAJOIT/alquilerController?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="removePayMethod">
-<part name="parameters" element="tns:removePayMethod"/>
+<message name="listFacturasClient">
+<part name="parameters" element="tns:listFacturasClient"/>
 </message>
-<message name="removePayMethodResponse">
-<part name="parameters" element="tns:removePayMethodResponse"/>
+<message name="listFacturasClientResponse">
+<part name="parameters" element="tns:listFacturasClientResponse"/>
 </message>
-<message name="createPayMethod">
-<part name="parameters" element="tns:createPayMethod"/>
+<message name="listPayMethodsClient">
+<part name="parameters" element="tns:listPayMethodsClient"/>
 </message>
-<message name="createPayMethodResponse">
-<part name="parameters" element="tns:createPayMethodResponse"/>
+<message name="listPayMethodsClientResponse">
+<part name="parameters" element="tns:listPayMethodsClientResponse"/>
 </message>
-<message name="updatePayMethod">
-<part name="parameters" element="tns:updatePayMethod"/>
+<message name="listFacturas">
+<part name="parameters" element="tns:listFacturas"/>
 </message>
-<message name="updatePayMethodResponse">
-<part name="parameters" element="tns:updatePayMethodResponse"/>
+<message name="listFacturasResponse">
+<part name="parameters" element="tns:listFacturasResponse"/>
 </message>
 <message name="createFactura">
 <part name="parameters" element="tns:createFactura"/>
@@ -34,11 +34,23 @@
 <message name="removeFacturaResponse">
 <part name="parameters" element="tns:removeFacturaResponse"/>
 </message>
-<message name="listFacturas">
-<part name="parameters" element="tns:listFacturas"/>
+<message name="createPayMethod">
+<part name="parameters" element="tns:createPayMethod"/>
 </message>
-<message name="listFacturasResponse">
-<part name="parameters" element="tns:listFacturasResponse"/>
+<message name="createPayMethodResponse">
+<part name="parameters" element="tns:createPayMethodResponse"/>
+</message>
+<message name="removePayMethod">
+<part name="parameters" element="tns:removePayMethod"/>
+</message>
+<message name="removePayMethodResponse">
+<part name="parameters" element="tns:removePayMethodResponse"/>
+</message>
+<message name="updatePayMethod">
+<part name="parameters" element="tns:updatePayMethod"/>
+</message>
+<message name="updatePayMethodResponse">
+<part name="parameters" element="tns:updatePayMethodResponse"/>
 </message>
 <message name="listPayMethods">
 <part name="parameters" element="tns:listPayMethods"/>
@@ -47,17 +59,17 @@
 <part name="parameters" element="tns:listPayMethodsResponse"/>
 </message>
 <portType name="alquilerController">
-<operation name="removePayMethod">
-<input wsam:Action="http://controller/alquilerController/removePayMethodRequest" message="tns:removePayMethod"/>
-<output wsam:Action="http://controller/alquilerController/removePayMethodResponse" message="tns:removePayMethodResponse"/>
+<operation name="listFacturasClient">
+<input wsam:Action="http://controller/alquilerController/listFacturasClientRequest" message="tns:listFacturasClient"/>
+<output wsam:Action="http://controller/alquilerController/listFacturasClientResponse" message="tns:listFacturasClientResponse"/>
 </operation>
-<operation name="createPayMethod">
-<input wsam:Action="http://controller/alquilerController/createPayMethodRequest" message="tns:createPayMethod"/>
-<output wsam:Action="http://controller/alquilerController/createPayMethodResponse" message="tns:createPayMethodResponse"/>
+<operation name="listPayMethodsClient">
+<input wsam:Action="http://controller/alquilerController/listPayMethodsClientRequest" message="tns:listPayMethodsClient"/>
+<output wsam:Action="http://controller/alquilerController/listPayMethodsClientResponse" message="tns:listPayMethodsClientResponse"/>
 </operation>
-<operation name="updatePayMethod">
-<input wsam:Action="http://controller/alquilerController/updatePayMethodRequest" message="tns:updatePayMethod"/>
-<output wsam:Action="http://controller/alquilerController/updatePayMethodResponse" message="tns:updatePayMethodResponse"/>
+<operation name="listFacturas">
+<input wsam:Action="http://controller/alquilerController/listFacturasRequest" message="tns:listFacturas"/>
+<output wsam:Action="http://controller/alquilerController/listFacturasResponse" message="tns:listFacturasResponse"/>
 </operation>
 <operation name="createFactura">
 <input wsam:Action="http://controller/alquilerController/createFacturaRequest" message="tns:createFactura"/>
@@ -67,9 +79,17 @@
 <input wsam:Action="http://controller/alquilerController/removeFacturaRequest" message="tns:removeFactura"/>
 <output wsam:Action="http://controller/alquilerController/removeFacturaResponse" message="tns:removeFacturaResponse"/>
 </operation>
-<operation name="listFacturas">
-<input wsam:Action="http://controller/alquilerController/listFacturasRequest" message="tns:listFacturas"/>
-<output wsam:Action="http://controller/alquilerController/listFacturasResponse" message="tns:listFacturasResponse"/>
+<operation name="createPayMethod">
+<input wsam:Action="http://controller/alquilerController/createPayMethodRequest" message="tns:createPayMethod"/>
+<output wsam:Action="http://controller/alquilerController/createPayMethodResponse" message="tns:createPayMethodResponse"/>
+</operation>
+<operation name="removePayMethod">
+<input wsam:Action="http://controller/alquilerController/removePayMethodRequest" message="tns:removePayMethod"/>
+<output wsam:Action="http://controller/alquilerController/removePayMethodResponse" message="tns:removePayMethodResponse"/>
+</operation>
+<operation name="updatePayMethod">
+<input wsam:Action="http://controller/alquilerController/updatePayMethodRequest" message="tns:updatePayMethod"/>
+<output wsam:Action="http://controller/alquilerController/updatePayMethodResponse" message="tns:updatePayMethodResponse"/>
 </operation>
 <operation name="listPayMethods">
 <input wsam:Action="http://controller/alquilerController/listPayMethodsRequest" message="tns:listPayMethods"/>
@@ -78,7 +98,7 @@
 </portType>
 <binding name="alquilerControllerPortBinding" type="tns:alquilerController">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="removePayMethod">
+<operation name="listFacturasClient">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -87,7 +107,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="createPayMethod">
+<operation name="listPayMethodsClient">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -96,7 +116,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="updatePayMethod">
+<operation name="listFacturas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -123,7 +143,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="listFacturas">
+<operation name="createPayMethod">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="removePayMethod">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="updatePayMethod">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

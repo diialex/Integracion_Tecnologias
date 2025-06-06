@@ -39,6 +39,11 @@ public class alquilerController {
         List<Factura> facts = as.listFacturas();
         return facts;
     }
+    @WebMethod(operationName = "listFacturasClient")
+    public List<Factura> listFacturasClient(String dni) {
+        List<Factura> facts = as.listFacturas(dni);
+        return facts;
+    }
     
     @WebMethod(operationName = "removeFactura")
     public void createFactura(Factura fac) {
@@ -63,6 +68,11 @@ public class alquilerController {
     @WebMethod(operationName = "listPayMethods")
     public List<Metodopago> listPayMethods() {
         List<Metodopago> pagos = as.listPayMethods();
+        return pagos;
+    }
+    @WebMethod(operationName = "listPayMethodsClient")
+    public List<Metodopago> listPayMethodsClient(String dni) {
+        List<Metodopago> pagos = as.listPayMethods(dni);
         return pagos;
     }
  }
