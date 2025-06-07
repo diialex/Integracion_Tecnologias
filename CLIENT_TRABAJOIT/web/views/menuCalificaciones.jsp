@@ -17,7 +17,7 @@
     </head>
     <body>
         <h1>Registro de calificacion</h1>
-        <s:form action="registrarAtletaAction">
+        <s:form action="crearCalificacionAction">
             
             <s:textfield name="valoracion" label="Valoracion " cssStyle="{color: red}"/>
             

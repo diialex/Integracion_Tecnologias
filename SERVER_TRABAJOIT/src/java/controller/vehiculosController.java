@@ -61,6 +61,11 @@ public class vehiculosController {
        return vs.getVehiculos();
     }
     
+    @WebMethod(operationName = "getVehiculo")
+    public Vehiculo getVehiculo(String id){
+       return vs.getVehiculo(id);
+    }
+    
     
     
     
@@ -88,6 +93,9 @@ public class vehiculosController {
     public List<Calificacion> getClienteCalifs(String dni){
         return vs.getClienteCalifs(dni);
     }
-    
+    @WebMethod(operationName = "getCalificacion")
+    public Calificacion getCalificacion(String id){
+       return vs.getCalificacion(id);
+    }
     
 }

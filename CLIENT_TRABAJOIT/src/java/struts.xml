@@ -26,6 +26,15 @@
             <result name="success">/datosVehiculo.jsp</result>
         </action>
 
+
+        <action name="datosVehiculo" class="controler.datosVehiculoAction">
+            <result name="success">/datosVehiculo.jsp</result>
+        </action>
+
+
+        <action name="eliminarVehiculo" class="controller.eliminarVehiculoAction">
+            <result name="success" type="redirect">menuVehiculo</result>
+        </action>
         
     </package>
     

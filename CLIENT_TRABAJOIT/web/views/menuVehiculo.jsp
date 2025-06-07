@@ -32,7 +32,7 @@
                 <s:iterator value="vehiculos" id="v">
                     <tr>
                          <td>   <%-- EDITAR!!! --%> 
-                            <s:url var="detalleVehiculoUrl" action="detalleVehiculo">
+                            <s:url var="datosVehiculoUrl" action="datosVehiculo">
                                 <s:param name="idVehiculo" value="%{#v.idVehiculo}"/>
                             </s:url>
                             <a href="<s:property value='%{detalleVehiculoUrl}'/>">
