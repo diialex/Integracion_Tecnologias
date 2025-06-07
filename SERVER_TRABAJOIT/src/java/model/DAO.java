@@ -30,6 +30,17 @@ public class DAO {
     }
     
     
+    public Vehiculo getVehiculo(String id){
+        session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        Query q = session.createQuery("FROM vehiculo WHERE id =  " + id);
+        Vehiculo v = (Vehiculo) q.uniqueResult();
+        tx.commit();
+        return v;
+    }
+    
+    
+    
     public void newVehiculo(String modelo, String marca, String tipo, String numplaca, String estadodisponibilidad, Set calificacions, Set alquilers){
         session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
@@ -70,6 +81,15 @@ public class DAO {
         return calificaciones;
     }
     
+    
+    public Calificacion getCalificacion(String id){
+        session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = session.beginTransaction();
+        Query q = session.createQuery("FROM calificacion WHERE id =  " + id);
+        Calificacion v = (Calificacion) q.uniqueResult();
+        tx.commit();
+        return v;
+    }
     
     public void newCalificacion(Cliente cliente, Vehiculo vehiculo, Integer estrellas, String  valoracion){
         session = HibernateUtil.getSessionFactory().openSession();

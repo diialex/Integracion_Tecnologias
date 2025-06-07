@@ -6,6 +6,8 @@
 package controller;
 
 import com.opensymphony.xwork2.ActionSupport;
+import java.util.List;
+import model.Vehiculo;
 
 /**
  *
@@ -13,11 +15,33 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class listarVehiculosAction extends ActionSupport {
     
+    private List<service.Vehiculo> vehiculosAux;
+    private List<Vehiculo> vehiculos;
+    
     public listarVehiculosAction() {
     }
     
     public String execute() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet.");
+             
+         //rescatar dni de la vista anterior
+
+        try {
+            /*
+            service.alquilerService ser = new service.alquilerService();
+            facturas = ser.listFacturas();*/
+            
+            service.VehiculoController_Service service = new service.VehiculoController_Service();
+            service.VehiculoController port = service.getVehiculosControllerPort();
+            vehiculosAux = port.getVehiculos();
+            //vehiculos = port.listFacturasClient(dni);*/
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        if (vehiculos != null) {
+            return SUCCESS;
+        } else {
+            return ERROR;
+        }
     }
     
 }

@@ -8,6 +8,8 @@
 <-- %@page import="model.Vehiculo"% !-->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="s"  uri="/struts-tags"%>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,13 +18,8 @@
     </head>
     <body>
         <h1>Histórico de vehiculos</h1>
-        <s:if test="msgError!=null">
-            <p><s:property value="msgError"/></p>
-        </s:if>
-            <s:form action="listarVehiculos">
-                <s:select name="vehiculo" label="Vehiculo" list="#session.vehiculos" listKey="idVehiculo" listValue="idVehiculo" headerKey="" headerValue="--seleccionar--"/>
-                <s:submit value="Filtrar"/>
-            </s:form>
+        
+        <s:if test="vehiculos!=null">
             <table>
                 <tr>
                     <th>idVehiculo?</th>
@@ -34,7 +31,15 @@
                 </tr>
                 <s:iterator value="vehiculos" id="v">
                     <tr>
-                         <td><s:property value="%{#v.idVehiculo}"/></td>
+                         <td>   <%-- EDITAR!!! --%> 
+                            <s:url var="detalleVehiculoUrl" action="detalleVehiculo">
+                                <s:param name="idVehiculo" value="%{#v.idVehiculo}"/>
+                            </s:url>
+                            <a href="<s:property value='%{detalleVehiculoUrl}'/>">
+                                <s:property value="%{#v.idVehiculo}"/>
+                            </a>
+                        </td>
+                                                
                          <td><s:property value="%{#v.modelo}"/></td>
                          <td><s:property value="%{#v.marca}"/></td>
                          <td><s:property value="%{#v.tipo}"/></td>
@@ -43,14 +48,17 @@
                     </tr>
                 </s:iterator>
             </table>
-        <s:form action="navL????evantamientoAction">
+        </s:if>
+        <s:else>
+            <h3>Ningun vehiculo registrado</h3>
+        </s:else>    
+            
+        <s:form action="crearVehiculoAction" method="post">
             <s:submit value="Registrar vehiculo"/>
         </s:form>
-        <s:form action="navAtletaAction">
-            <s:submit value="Registrar atletas"/>
-        </s:form>
             
-            <%-- start web service invocation --%>    
+            
+        <%-- start web service invocation --%>    
             
             
     </body>

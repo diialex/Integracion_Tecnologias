@@ -5,5 +5,9 @@
 <!-- Author: Alex -->
  
 <struts>
-    <!-- Add your configuration elements here -->
+   <package name="listarVehiculos" namespace="/listarVehiculos" extends="struts-default">
+        <action name="listarVehiculos" class="controller.listarVehiculosAction">
+            <result name="success">/vistas/menuVehiculo.jsp</result>
+        </action>
+    </package>
 </struts>

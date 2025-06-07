@@ -32,6 +32,10 @@ public class vehiculosService {
         return dao.getVehiculos();
     }
     
+    public Vehiculo getVehiculo(String id){
+        return dao.getVehiculo(id);
+    }
+    
     public void newVehiculo(String modelo, String marca, String tipo, String numplaca, String estadodisponibilidad, Set calificacions, Set alquilers){
         dao.newVehiculo( modelo, marca, tipo, numplaca, estadodisponibilidad, calificacions, alquilers);
     }
@@ -64,6 +68,11 @@ public class vehiculosService {
     public List<Calificacion> getCalificaciones(){
        return dao.getCalificaciones();
     }
+    
+    public Calificacion getCalificacion(String id){
+        return dao.getCalificacion(id);
+    }
+    
 
     public List<Calificacion> getClienteCalifs(String dni){
         return dao.getClienteCalifs(dni);

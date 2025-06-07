@@ -3,8 +3,32 @@
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+    
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default">
+        <action name="">
+            <result type="chain">
+                <param name="namespace">/crearVehiculo</param>
+                <param name="actionName">crearVehiculo</param>
+            </result>
+        </action>
         
     </package>
+    
+    <package name="actions" extends="struts-default">
+        <action name="vehiculosAction" class="controller.faAction">
+            <result name="success">/views/menuVehiculo.jsp</result>
+            <result name="error">/views/crearVehiculo.jsp</result>
+        </action>
+        
+        
+        <action name="detalleVehiculo" class="controler.DatosVehiculoAction">
+            <result name="success">/datosVehiculo.jsp</result>
+        </action>
+
+        
+    </package>
+    
+    
 </struts>
+
