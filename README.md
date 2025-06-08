@@ -37,11 +37,10 @@ VISTAS
 JAVI:
 -crear alquiler(ALTA) - jefe
 -eliminar alquiler(BAJA) -jefe
--mod alquiler -jefe
--> ya pensare que hacer con las vistas de notificaciones
-- MENU ALQUILER JEFE-> botones a las tres vistas de alquiler
-- MENU ALQUILER CLIENTE -> botones a buscar alquileres y registro alquileres
--MENU JEFE -> botones al menú alquiler y menú vehiculos, tienes q estar loggeado
+-mod alquiler(UPDATE) -jefe
+-get alquileres y alquiler -jefe y cliente
+- MENU ALQUILER JEFE-> listado de alquileres y metodos CRUD dinamicos en el mismo menu de pantalla
+- MENU ALQUILER CLIENTE -> listado de alquileres y selector para agregar el cliente actual al alquiler
 
 ALE:
 -INDEX - presentación de la web - botones de login y registro
