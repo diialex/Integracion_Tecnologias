@@ -22,6 +22,13 @@ public class Alquiler  implements java.io.Serializable {
 
     public Alquiler() {
     }
+    
+    public Alquiler(Cliente cliente, Vehiculo vehiculo, Date fechafin, Integer estadoalquiler) {
+       this.cliente = cliente;
+       this.vehiculo = vehiculo;
+       this.fechafin = fechafin;
+       this.estadoalquiler = estadoalquiler;
+    }
 
     public Alquiler(Cliente cliente, Vehiculo vehiculo, Date fechafin, Integer estadoalquiler, Set notificacions, Set facturas) {
        this.cliente = cliente;

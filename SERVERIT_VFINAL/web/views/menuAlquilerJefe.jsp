@@ -14,15 +14,46 @@
     </head>
     <body>
         <h1>Menú de Alquiler (Jefe)</h1>
-        <!-- 
-        <s:form action="registroAtleta" method="post">
-            <s:textfield label="Edad" name="edad" />
-            <s:select label="Género" name="genero" list="{'M', 'F', 'Otro'}" value ="genero"> </s:select>
-            <s:textfield label="Peso" name="peso" />
-            <s:textfield label="Altura" name="altura" />
-            <s:submit value="Registrar Atleta"></s:submit>
-        </s:form>-->
+        <h2>Crear nuevo Alquiler</h2>
+        <s:form action="createAlquiler" method="post">
+            <s:select label="Elige el vehículo" name="numplaca" list="listaVehiculos" listKey="numplaca" listValue ="numplaca"> </s:select>
+            <!-- Campo de fecha usando HTML5 -->
+            <!--<label>Fecha fin del alquiler</label>
+            <input type="date" name="fechaRegistro" />-->
+            <s:submit value="Registrar nuevo alquiler"></s:submit>
+        </s:form>
         
+        <h2>Lista de Alquileres</h2>
+        <table border="1" cellspacing="1" cellpadding="2" width="100%" bgcolor="#FFFFFF">
+            <tr>
+                <td><b>ID</b></td>
+                <td><b>Cliente</b></td>
+                <td><b>Vehículo</b></td>
+                <td><b>Fecha fin alquiler</b></td>
+                <td><b>Estado del alquiler</b></td>
+            </tr>
+            
+            <s:iterator value="listaAlquileres">
+                <tr>
+                    <td><b><s:property value="id" /></b></td>
+                    <td><b><s:property value="cliente.id" /></b></td>
+                    <td><b><s:property value="vehiculo.numplaca" /></b></td>
+                    <td><b><s:property value="fechafin" /></b></td>
+                    <td><b><s:property value="estadoalquiler" /></b></td>
+                    <td><b><s:form action="updateAlquiler" method="post">
+                                <s:hidden name="id" value="%{id}" />
+                                <s:submit value="Modificar alquiler"></s:submit>
+                            </s:form></b></td>
+                    <td><b><s:form action="deleteAlquiler" method="post">
+                                <s:hidden name="id" value="%{id}" />
+                                <s:submit value="Eliminar alquiler"></s:submit>
+                            </s:form></b></td>
+                    
+                </tr>
+            </s:iterator>
+        </table>
+            
+        <!--
         <h2>Lista de Vehiculos</h2>
         <table border="1" cellspacing="1" cellpadding="2" width="100%" bgcolor="#FFFFFF">
             <tr>
@@ -42,8 +73,8 @@
                     <td><b><s:property value="estadodisponibilidad" /></b></td>
                 </tr>
             </s:iterator>
-            
         </table>
+        -->
         
     </body>
 </html>

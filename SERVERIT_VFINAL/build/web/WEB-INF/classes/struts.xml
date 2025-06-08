@@ -15,9 +15,30 @@
     
     <package name="actions" extends="struts-default">
         <!-- Ejecuta la query y todos los parametros necearios en el controler.{//action} y te lleva al jsp principal para mostrarlos-->
-        <action name="listarAlquileres" class="controller.CargarListaVehiculosAction">
+        <action name="listarAlquileres" class="controller.CargarListasParaAlquilerAction">
             <result name="success">/views/menuAlquilerJefe.jsp</result>
             <!--<result name="error">/views/menuJefe.jsp</result>-->
+        </action>
+        
+        <action name="createAlquiler" class="controller.CrearNuevoAlquilerAction">
+            <result name="success" type="chain">
+                <param name="actionName">listarAlquileres</param>
+            </result>
+            <result name="error">/views/menuJefe.jsp</result>
+        </action>
+        
+        <action name="updateAlquiler" class="controller.ModificarAlquilerAction">
+            <result name="success" type="chain">
+                <param name="actionName">listarAlquileres</param>
+            </result>
+            <result name="error">/views/menuJefe.jsp</result>
+        </action>
+        
+        <action name="deleteAlquiler" class="controller.EliminarAlquilerAction">
+            <result name="success" type="chain">
+                <param name="actionName">listarAlquileres</param>
+            </result>
+            <result name="error">/views/menuJefe.jsp</result>
         </action>
         
     </package>

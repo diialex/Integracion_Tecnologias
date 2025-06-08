@@ -8,10 +8,10 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="cliente" class="model.Cliente" fetch="select">
+        <many-to-one name="cliente" class="model.Cliente" fetch="select" lazy="false">
             <column name="dnicliente" />
         </many-to-one>
-        <many-to-one name="vehiculo" class="model.Vehiculo" fetch="select">
+        <many-to-one name="vehiculo" class="model.Vehiculo" fetch="select" lazy="false">
             <column name="idvehiculo" />
         </many-to-one>
         <property name="fechafin" type="date">
