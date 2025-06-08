@@ -18,27 +18,7 @@ import java.lang.*;
 public class DAO {
     
     private static Session session;
-    
-    
-    public List<Vehiculo> getVehiculos(){
-        session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        Query q = session.createQuery("FROM vehiculo");
-        List<Vehiculo> vehiculos = (List<Vehiculo>) q.list();
-        tx.commit();
-        return vehiculos;
-    }
-    
-    
-    public Vehiculo getVehiculo(String id){
-        session = HibernateUtil.getSessionFactory().openSession();
-        Transaction tx = session.beginTransaction();
-        Query q = session.createQuery("FROM vehiculo WHERE id =  " + id);
-        Vehiculo v = (Vehiculo) q.uniqueResult();
-        tx.commit();
-        return v;
-    }
-    
+   
     
     
     public void newVehiculo(String modelo, String marca, String tipo, String numplaca, String estadodisponibilidad, Set calificacions, Set alquilers){

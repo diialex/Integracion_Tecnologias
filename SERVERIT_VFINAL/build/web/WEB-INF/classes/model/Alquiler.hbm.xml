@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-jun-2025 12:53:59 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.Alquiler" table="alquiler" catalog="recar" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="cliente" class="model.Cliente" fetch="select" lazy="false">
+            <column name="dnicliente" />
+        </many-to-one>
+        <many-to-one name="vehiculo" class="model.Vehiculo" fetch="select" lazy="false">
+            <column name="idvehiculo" />
+        </many-to-one>
+        <property name="fechafin" type="date">
+            <column name="fechafin" length="10" />
+        </property>
+        <property name="estadoalquiler" type="java.lang.Integer">
+            <column name="estadoalquiler" />
+        </property>
+        <set name="notificacions" table="notificacion" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idalquiler" />
+            </key>
+            <one-to-many class="model.Notificacion" />
+        </set>
+        <set name="facturas" table="factura" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idalquiler" unique="true" />
+            </key>
+            <one-to-many class="model.Factura" />
+        </set>
+    </class>
+</hibernate-mapping>

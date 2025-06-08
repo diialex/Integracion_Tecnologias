@@ -16,9 +16,9 @@
     </package>
     
     <package name="actions" extends="struts-default">
-        <action name="vehiculosAction" class="controller.faAction">
-            <result name="success">/views/menuVehiculo.jsp</result>
-            <result name="error">/views/crearVehiculo.jsp</result>
+        
+        <action name="crearVehiculo" class="controler.crearVehiculoAction">
+            <result name="success">/crearVehiculo.jsp</result>
         </action>
         
         
