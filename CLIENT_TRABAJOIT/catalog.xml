@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/AUX_SERVER/alquilerController?wsdl" uri="src/conf/xml-resources/web-service-references/alquilerController/wsdl/localhost_8080/AUX_SERVER/alquilerController.wsdl"/>
-    <system systemId="http://localhost:8080/AUX_SERVER/alquilerController?xsd=1" uri="src/conf/xml-resources/web-service-references/alquilerController/wsdl/localhost_8080/AUX_SERVER/alquilerController.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/AUX_SERVER/vehiculosController?wsdl" uri="src/conf/xml-resources/web-service-references/vehiculosController/wsdl/localhost_8080/AUX_SERVER/vehiculosController.wsdl"/>
-    <system systemId="http://localhost:8080/AUX_SERVER/vehiculosController?xsd=1" uri="src/conf/xml-resources/web-service-references/vehiculosController/wsdl/localhost_8080/AUX_SERVER/vehiculosController.xsd_1.xsd"/>
-</catalog>
