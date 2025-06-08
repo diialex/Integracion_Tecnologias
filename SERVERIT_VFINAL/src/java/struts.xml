@@ -8,13 +8,15 @@
         <!-- Ejecutas el proyecto desde cero y hace chain a listarRegistros -->
         <action name="">
             <result type="chain">
-                <param name="actionName">listarAlquileres</param>
+                <param name="actionName">verIndex</param>
             </result>
         </action>
     </package>
     
-    <package name="actions" extends="struts-default">
-        <!-- Ejecuta la query y todos los parametros necearios en el controler.{//action} y te lleva al jsp principal para mostrarlos-->
+    <!--PAQUETE STRUTS ALQUILER-->
+    
+    <package name="actionsAlquiler" extends="struts-default">
+    
         <action name="listarAlquileres" class="controller.CargarListasParaAlquilerAction">
             <result name="success">/views/menuAlquilerJefe.jsp</result>
             <!--<result name="error">/views/menuJefe.jsp</result>-->
@@ -27,11 +29,16 @@
             <result name="error">/views/menuJefe.jsp</result>
         </action>
         
+        <action name="cargarListasUpdate" class="controller.CargarListasParaUpdateAction">
+            <result name="success">/views/vistaUpdateAlquilerJefe.jsp</result>
+        </action>
+        
         <action name="updateAlquiler" class="controller.ModificarAlquilerAction">
             <result name="success" type="chain">
                 <param name="actionName">listarAlquileres</param>
             </result>
             <result name="error">/views/menuJefe.jsp</result>
+            <result name="input">/views/menuAlquilerCliente.jsp</result>
         </action>
         
         <action name="deleteAlquiler" class="controller.EliminarAlquilerAction">
@@ -41,5 +48,93 @@
             <result name="error">/views/menuJefe.jsp</result>
         </action>
         
+        <action name="listarAlquileresCliente" class="controller.CargarListasParaAlquilerAction">
+            <result name="success">/views/menuAlquilerCliente.jsp</result>
+            <!--<result name="error">/views/menuJefe.jsp</result>-->
+        </action>
+        
+        <action name="seleccionAlquilerCliente" class="controller.SeleccionAlquilerAction">
+            <result name="success" type="chain">
+                <param name="actionName">listarAlquileresCliente</param>
+            </result>
+            <result name="error">/views/ERROR_INPUT.jsp</result>
+        </action>
+        
     </package>
+        
+    <!--PAQUETE STRUTS USUARIO-->
+        
+    <package name="actionsUsuario" extends="struts-default">
+        
+        <action name="verIndex">
+            <result name="success">/views/index.jsp</result>
+        </action>  
+        
+        <action name="verVistaLogin">
+            <result name="success">/views/login.jsp</result>
+        </action>
+
+        <action name="verVistaRegistroUsuario">
+            <result name="success">/views/registro.jsp</result>
+        </action>
+
+        <action name="verVistaResetContra">
+            <result name="success">/views/reset.jsp</result>
+        </action>    
+            
+        <!-- Registro del usuario -->
+        <action name="registrarUsuario" class="controller.RegistroAction">
+            <result name="success">/views/login.jsp</result>
+            <result name="input">/views/registro.jsp</result>
+        </action>  
+        
+        <action name="loginUsuario" class="controller.LoginAction">
+            <result name="success">/views/menuCliente.jsp</result>
+            <result name="input">/views/menuAlquilerJefe.jsp</result>
+            <result name="error">/views/ERROR_INPUT.jsp</result>
+        </action>
+        
+        <action name="resetearContrasena" class="controller.ResetAction">
+            <result name="success">/views/login.jsp</result>
+            <result name="input">/views/reset.jsp</result>
+        </action>
+            
+        <!-- Menú cliente: enlaces a otras secciones -->
+        <action name="menuAlquilerCliente">
+            <result name="success" type="chain">
+                <param name="actionName">listarAlquileresCliente</param>
+            </result>
+        </action>
+
+        <action name="irmenujefe">
+            <result type="chain">
+                <param name="actionName">listarAlquileres</param>
+            </result>
+        </action>
+        
+        <action name="menuMetodosPago">
+            <result>/views/menuMetodosPago.jsp</result>
+        </action>
+
+        <action name="menuCalificaciones">
+            <result>/views/menuCalificaciones.jsp</result>
+        </action>
+
+        <action name="menuFacturas">
+            <result>/views/menuFacturas.jsp</result>
+        </action>
+        
+        <action name="bajaUsuario">
+            <result>/views/baja.jsp</result>
+        </action>
+
+        <!-- Baja del usuario -->
+        <action name="eliminarUsuario" class="controller.EliminarUsuarioAction">
+            <result name="success">/views/index.jsp</result>
+            <result name="error">/views/baja.jsp</result>
+        </action>
+        
+    </package>
+    
+    
 </struts>

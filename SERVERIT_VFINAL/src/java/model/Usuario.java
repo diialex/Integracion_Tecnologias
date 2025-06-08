@@ -24,7 +24,17 @@ public class Usuario  implements java.io.Serializable {
 
     public Usuario() {
     }
-
+    
+    public Usuario(String nick, String contrasena, String correo, Long telefono, String nombre, String apellido1, String apellido2) {
+       this.nick = nick;
+       this.contrasena = contrasena;
+       this.correo = correo;
+       this.telefono = telefono;
+       this.nombre = nombre;
+       this.apellido1 = apellido1;
+       this.apellido2 = apellido2;
+    }
+    
     public Usuario(String nick, String contrasena, String correo, Long telefono, String nombre, String apellido1, String apellido2, Set clientes, Set jefes) {
        this.nick = nick;
        this.contrasena = contrasena;

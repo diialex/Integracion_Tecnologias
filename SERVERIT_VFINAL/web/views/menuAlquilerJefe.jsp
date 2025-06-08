@@ -40,7 +40,7 @@
                     <td><b><s:property value="vehiculo.numplaca" /></b></td>
                     <td><b><s:property value="fechafin" /></b></td>
                     <td><b><s:property value="estadoalquiler" /></b></td>
-                    <td><b><s:form action="updateAlquiler" method="post">
+                    <td><b><s:form action="cargarListasUpdate" method="post">
                                 <s:hidden name="id" value="%{id}" />
                                 <s:submit value="Modificar alquiler"></s:submit>
                             </s:form></b></td>
@@ -52,6 +52,10 @@
                 </tr>
             </s:iterator>
         </table>
+        
+        <s:form action="verVistaLogin" method="post">
+            <s:submit value="Volver pagina principal"></s:submit>
+        </s:form>
             
         <!--
         <h2>Lista de Vehiculos</h2>

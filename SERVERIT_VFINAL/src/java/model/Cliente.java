@@ -21,6 +21,10 @@ public class Cliente  implements java.io.Serializable {
 
     public Cliente() {
     }
+    
+    public Cliente(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     public Cliente(Usuario usuario, Set metodopagos, Set notificacions, Set calificacions, Set alquilers, Set facturas) {
        this.usuario = usuario;

@@ -8,7 +8,7 @@
             <column name="id" />
             <generator class="identity" />
         </id>
-        <many-to-one name="usuario" class="model.Usuario" fetch="select">
+        <many-to-one name="usuario" class="model.Usuario" fetch="select" property-ref="nick">
             <column name="nick" />
         </many-to-one>
         <set name="metodopagos" table="metodopago" inverse="true" lazy="true" fetch="select">
