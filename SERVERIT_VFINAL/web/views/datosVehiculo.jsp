@@ -13,18 +13,38 @@
     <body> <%-- HACER TABLA!!!!!--%>
                 
         <h1>Detalles del Vehículo</h1>
-        <p>ID: <s:property value="vehiculo.id"/></p>
-        <p>Modelo: <s:property value="vehiculo.modelo"/></p>
-        <p>Marca: <s:property value="vehiculo.marca"/></p>
-        <p>Tipo: <s:property value="vehiculo.tipo"/></p>
-        <p>Placa: <s:property value="vehiculo.numPlaca"/></p>
-        <p>Disponibilidad: <s:property value="vehiculo.estadoDisponibilidad"/></p>
-        
-        
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>ID</th>
+                <td><s:property value="vehiculo.id"/></td>
+            </tr>
+            <tr>
+                <th>Modelo</th>
+                <td><s:property value="vehiculo.modelo"/></td>
+            </tr>
+            <tr>
+                <th>Marca</th>
+                <td><s:property value="vehiculo.marca"/></td>
+            </tr>
+            <tr>
+                <th>Tipo</th>
+                <td><s:property value="vehiculo.tipo"/></td>
+            </tr>
+            <tr>
+                <th>Placa</th>
+                <td><s:property value="vehiculo.numPlaca"/></td>
+            </tr>
+            <tr>
+                <th>Disponibilidad</th>
+                <td><s:property value="vehiculo.estadoDisponibilidad"/></td>
+            </tr>
+        </table>
+
+    <br>
         
         <!-- Botón para ir a editar el vehículo MODIFICAR ID-->
         <s:url var="editarVehiculoUrl" action="editarVehiculo">
-            <s:param name="idVehiculo" value="%{vehiculo.idVehiculo}"/>
+            <s:param name="id" value="%{vehiculo.id}"/>
         </s:url>
         <form action="<s:property value='%{editarVehiculoUrl}'/>" method="post">
             <input type="submit" value="Modificar Vehículo"/>

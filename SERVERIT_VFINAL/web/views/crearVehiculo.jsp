@@ -13,7 +13,7 @@
 <body>
     <h1>Registrar Nuevo Vehículo</h1>
 
-    <s:form action="guardarVehiculo" method="post">
+    <s:form action="CrearNuevoVehiculoVehiculo" method="post">
         <s:textfield name="vehiculo.modelo" label="Modelo" required="true"/>
         <s:textfield name="vehiculo.marca" label="Marca" required="true"/>
         <s:textfield name="vehiculo.tipo" label="Tipo" required="true"/>

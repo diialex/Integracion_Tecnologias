@@ -13,7 +13,7 @@
 <body>
     <h1>Registrar Calificación</h1>
 
-    <s:form action="guardarCalificacion" method="post">
+    <s:form action="CrearNuevaCalificacion" method="post">
         <!-- Selector de vehículo (solo los que el cliente ha usado) -->
         <s:select 
             name="idVehiculo" 

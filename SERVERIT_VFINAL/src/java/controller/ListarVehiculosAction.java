@@ -32,5 +32,15 @@ public class ListarVehiculosAction extends ActionSupport {
         return SUCCESS;
         
     }
+
+    public List<Vehiculo> getVehiculos() {
+        return vehiculos;
+    }
+
+    public void setVehiculos(List<Vehiculo> vehiculos) {
+        this.vehiculos = vehiculos;
+    }
+    
+    
     
 }
